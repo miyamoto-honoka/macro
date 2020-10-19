@@ -1,0 +1,26 @@
+
+■テーマの入れ方
+下記にぶち込む
+/var/lib/redmine/public/themes
+
+
+
+■プラグインの入れ方
+1.redmineログイン
+
+2.プラグインを使用できるようにする
+[管理] > [設定] > [API] > [RESTによるWebサービスを有効にする]をON
+
+3.EasyGanttFree.zipを解凍
+
+4.下記にフォルダを配置
+  /var/lib/redmine/plugins/easy_gantt
+
+5.インストール
+# cd /var/lib/redmine/
+# bundle install
+# bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+# RAILS_ENV=production bundle exec rake db:migrate
+
+6.Apacheを再起動
+# systemctl restart httpd
