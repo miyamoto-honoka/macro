@@ -24,3 +24,23 @@
 
 6.Apacheを再起動
 # systemctl restart httpd
+
+
+■ImageMagickのインストール
+チケットに添付された画像をサムネイル表示する。
+
+
+1. EPELリポジトリを有効にする
+ # dnf install -y epel-release
+ # dnf config-manager --set-enabled PowerTools 
+ 
+ 
+2. GraphicsMagickをインストール 不要？
+# dnf install GraphicsMagick
+ 
+3. ImageMagickをインストールする
+ # dnf install -y ImageMagick ImageMagick-devel
+ 
+ systemctl restart httpd
+ 
+ 
