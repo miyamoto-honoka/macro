@@ -1,0 +1,16 @@
+HOSTADDR = '192.168aa' 
+USERNAME = 'root' 
+PASSWORD = 'a' 
+;============================================== 
+;; ①コマンド組立て 
+COMMAND = HOSTADDR 
+strconcat COMMAND ':22 /ssh /2 /auth=password /user=' 
+strconcat COMMAND USERNAME 
+strconcat COMMAND ' /passwd=' 
+strconcat COMMAND PASSWORD
+ 
+;; ②接続 
+connect COMMAND
+ 
+;; ③マクロ終了 
+end
